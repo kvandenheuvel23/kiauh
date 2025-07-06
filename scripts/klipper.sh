@@ -424,7 +424,7 @@ function find_instance_files() {
   local target_name=${2}
   local files
 
-  readarray -t files < <(find "${HOME}" -regex "${HOME}/[A-Za-z0-9_]+_data/${target_folder}/${target_name}" | sort)
+  readarray -t files < <(find "${HOME}" -regextype posix-extended -regex "${HOME}/[A-Za-z0-9_]+_data/${target_folder}/${target_name}" | sort)
 
   echo -e "${files[@]}"
 }
